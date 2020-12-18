@@ -85,4 +85,9 @@ nav ul {
 
 .navbar-button:hover {
   background: grey;
+  cursor: pointer;
+}
+
+.nav-selected {
+  background: rgb(116, 11, 11);
 }
