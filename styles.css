@@ -79,13 +79,24 @@ nav ul {
   justify-content: flex-start;
 }
 
-.navbar-button {
+.new-array-button {
   padding: 0.9rem 1rem;
+  cursor: pointer;
+  color: grey;
+}
+
+.sort-button {
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  color: grey;
+}
+
+.navbar-button {
+  color: white;
 }
 
 .navbar-button:hover {
   background: grey;
-  cursor: pointer;
 }
 
 .nav-selected {
