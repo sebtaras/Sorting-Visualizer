@@ -15,9 +15,10 @@ function generateArray() {
       array[i] = Math.floor(value * 1000) / 10;
     }
   }
-  displayArray(
-    array.sort((a, b) => {
-      return b - a;
-    })
-  );
+  // displayArray(
+  //   array.sort((a, b) => {
+  //     return b - a;
+  //   })
+  // );
+  displayArray(array);
 }

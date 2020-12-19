@@ -125,6 +125,10 @@ nav ul {
   display: flex;
 }
 
+.selected-element {
+  background: black;
+}
+
 .array-display {
   flex: 1 1 auto;
 }
