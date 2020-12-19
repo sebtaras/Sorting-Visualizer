@@ -11,7 +11,7 @@ function getSettings() {
 
 function setSettings(child, parent, siblings) {
   parent.dataset.value = child.innerHTML.split(" ").join("-");
-  siblings.forEach((sibling) => {
+  siblings.forEach(sibling => {
     if (sibling.innerHTML != undefined) sibling.classList.remove("nav-selected");
   });
   child.classList.add("nav-selected");
@@ -40,18 +40,33 @@ function enableSortButton() {
 }
 
 function sortListener() {
-  const { algorithm } = getSettings();
+  const { algorithm, speed } = getSettings();
+  let timeout;
+  switch (speed) {
+    case "Slow":
+      timeout = 1000;
+      break;
+    case "Medium":
+      timeout = 500;
+      break;
+    case "Fast":
+      timeout = 150;
+      break;
+    case "Very-quick-one":
+      timeout = 1;
+      break;
+  }
   console.log(algorithm);
   switch (algorithm) {
     case "Bubble-sort":
-      bubblesort(getArray());
+      bubblesort(getArray(), timeout);
       break;
   }
 }
 
 const selectorAlgorithm = document.querySelector(".selector-algorithm");
 const childrenAlgorithm = selectorAlgorithm.childNodes;
-childrenAlgorithm.forEach((child) => {
+childrenAlgorithm.forEach(child => {
   if (child.innerHTML != undefined) {
     child.addEventListener("click", () => setSettings(child, selectorAlgorithm, childrenAlgorithm));
   }
@@ -59,7 +74,7 @@ childrenAlgorithm.forEach((child) => {
 
 const selectorSpeed = document.querySelector(".selector-speed");
 const childrenSpeed = selectorSpeed.childNodes;
-childrenSpeed.forEach((child) => {
+childrenSpeed.forEach(child => {
   if (child.innerHTML != undefined) {
     child.addEventListener("click", () => setSettings(child, selectorSpeed, childrenSpeed));
   }
@@ -67,7 +82,7 @@ childrenSpeed.forEach((child) => {
 
 const selectorSize = document.querySelector(".selector-size");
 const childrenSize = selectorSize.childNodes;
-childrenSize.forEach((child) => {
+childrenSize.forEach(child => {
   if (child.innerHTML != undefined) {
     child.addEventListener("click", () => setSettings(child, selectorSize, childrenSize));
   }

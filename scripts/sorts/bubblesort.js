@@ -1,25 +1,47 @@
-async function bubblesort(array) {
+async function bubblesort(array, timeout) {
   const arrayDisplay = document.querySelector(".array-display");
-  const elements = document.querySelectorAll(".element");
-  alert(elements.length);
   for (let i = 0; i < array.length - 1; i++) {
-    for (let j = i + 1; j < array.length; j++) {
+    let swap = false;
+    for (let j = 0; j < array.length - 1 - i; j++) {
+      let latter = true;
+      displayArray(array);
+      let elements = document.querySelectorAll(".element");
       //highlight selected
-      let color1 = elements[i].style.background;
-      let color2 = elements[j].style.background;
-      elements[i].style.background = "black";
+      let color1 = elements[j].style.background;
+      let color2 = elements[j + 1].style.background;
       elements[j].style.background = "black";
-      await sleep(20);
+      await sleep(timeout);
+      elements[j + 1].style.background = "black";
+      await sleep(timeout);
       //highlight smaller and bigger
+      if (array[j] > array[j + 1]) {
+        temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+        elements[j].style.background = "blue";
+        elements[j + 1].style.background = "yellow";
+        swap = true;
+        latter = false;
+      } else {
+        elements[j].style.background = "yellow";
+        elements[j + 1].style.background = "blue";
+      }
+      await sleep(timeout);
       //rerender with swap
-      elements[i].style.background = color1;
-      elements[j].style.background = color2;
-      console.log(color1);
-      await sleep(20);
+      displayArray(array);
+      elements = document.querySelectorAll(".element");
+      if (!latter) {
+        elements[j].style.background = "yellow";
+        elements[j + 1].style.background = "blue";
+        await sleep(timeout);
+      }
+    }
+    if (!swap) {
+      break;
     }
   }
 }
 
 function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }

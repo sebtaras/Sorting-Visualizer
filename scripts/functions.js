@@ -1,9 +1,7 @@
-function displayArray(array) {
+function displayArray(array, speed) {
   const arrayDisplay = document.querySelector(".array-display");
   arrayDisplay.dataset.array = JSON.stringify(array);
-  console.log(arrayDisplay.style.height);
   arrayDisplay.innerHTML = "";
-  console.log("meme");
 
   for (let i = 0; i < array.length; i++) {
     let container = document.createElement("div");
@@ -23,6 +21,7 @@ function displayArray(array) {
 
     const { red, green, blue } = calculateColor(array[i], array.length);
     element.style.background = `rgb(${red},${green},${blue})`;
+    element.style.background = `teal`;
     arrayDisplay.appendChild(container);
   }
   if (document.querySelector(".sort-button").dataset.enabled != "true") enableSortButton();
@@ -30,7 +29,6 @@ function displayArray(array) {
 
 function calculateColor(value, length) {
   let t = value / length;
-  console.log("t=", t);
   while (t > 1) {
     t = t / 10;
   }
@@ -41,6 +39,5 @@ function calculateColor(value, length) {
   const green = Math.floor(koef * t);
   const red = Math.floor(koef * (1 - t));
   const blue = 0;
-  console.log(red, green, blue, Math.round(t * 100, 2) / 100);
   return { red, green, blue };
 }
