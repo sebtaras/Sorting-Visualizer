@@ -41,3 +41,7 @@ function calculateColor(value, length) {
   const blue = 0;
   return { red, green, blue };
 }
+
+function enableStopButton() {}
+
+function disableStopButton() {}
