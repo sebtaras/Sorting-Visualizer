@@ -6,6 +6,20 @@
   font-family: "Montserrat", sans-serif;
   list-style: none;
   text-decoration: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  height: 100%;
+  flex: 0 1 auto;
 }
 
 nav {
@@ -102,3 +116,32 @@ nav ul {
 .nav-selected {
   background: rgb(116, 11, 11);
 }
+
+.element {
+  border-bottom: thin solid white;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.array-display {
+  flex: 1 1 auto;
+}
+
+footer {
+  height: 3rem;
+  background: rgb(21, 1, 43);
+}
+
+/* @media screen and (max-width: 1000px) {
+  .dropdowns {
+    display: none;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+} */

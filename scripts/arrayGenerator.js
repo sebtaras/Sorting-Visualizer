@@ -1,4 +1,6 @@
-function generateArray(count) {
+function generateArray() {
+  const count = document.querySelector(".selector-size").dataset.value;
+  console.log(count);
   console.log("generating");
   let array = [];
   let insertMax = Math.floor(Math.random() * count);
@@ -13,12 +15,9 @@ function generateArray(count) {
       array[i] = Math.floor(value * 1000) / 10;
     }
   }
-  const sorted = [...array].sort((a, b) => {
-    return a - b;
-  });
-
-  return { array, sorted };
+  displayArray(
+    array.sort((a, b) => {
+      return b - a;
+    })
+  );
 }
-
-const { array, sorted } = generateArray(100);
-console.log(array, sorted);

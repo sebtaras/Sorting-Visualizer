@@ -6,41 +6,46 @@
     <link rel="stylesheet" href="styles.css" />
     <script defer src="/scripts/arrayGenerator.js"></script>
     <script defer src="/scripts/eventListeners.js"></script>
+    <script defer src="/scripts/functions.js"></script>
     <script defer src="/scripts/main.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <nav>
-      <div class="logo">SORTING <span>VISUALISER</span></div>
-      <ul>
-        <div class="dropdown dropdown-algorithm">
-          Algorithm +
-          <div class="dropdown-content selector-algorithm">
-            <a href="#">Bubble sort</a>
-            <a href="#">Insertion sort</a>
-            <a href="#">Merge sort</a>
-            <a href="#">Quick sort</a>
+    <main>
+      <nav>
+        <div class="logo">SORTING <span>VISUALISER</span></div>
+        <ul class="dropdowns">
+          <div class="dropdown dropdown-algorithm">
+            Algorithm +
+            <div class="dropdown-content selector-algorithm">
+              <a href="#">Bubble sort</a>
+              <a href="#">Insertion sort</a>
+              <a href="#">Merge sort</a>
+              <a href="#">Quick sort</a>
+            </div>
           </div>
-        </div>
-        <div class="dropdown dropdown-speed">
-          Sorting Speed +
-          <div class="dropdown-content selector-speed">
-            <a href="#">Slow</a>
-            <a href="#">Medium</a>
-            <a href="#">Fast</a>
+          <div class="dropdown dropdown-speed">
+            Sorting Speed +
+            <div class="dropdown-content selector-speed">
+              <a href="#">Slow</a>
+              <a href="#">Medium</a>
+              <a href="#">Fast</a>
+            </div>
           </div>
-        </div>
-        <div class="dropdown dropdown-size">
-          Array Size +
-          <div class="dropdown-content selector-size">
-            <a href="#">10</a>
-            <a href="#">50</a>
-            <a href="#">250</a>
+          <div class="dropdown dropdown-size">
+            Array Size +
+            <div class="dropdown-content selector-size">
+              <a href="#">10</a>
+              <a href="#">50</a>
+              <a href="#">100</a>
+              <a href="#">250</a>
+            </div>
           </div>
-        </div>
-        <div class="new-array-button">Generate new array</div>
-        <div class="sort-button">SORT</div>
-      </ul>
-    </nav>
+          <div class="new-array-button">Generate new array</div>
+          <div class="sort-button">SORT</div>
+        </ul>
+      </nav>
+      <section class="array-display"></section>
+    </main>
   </body>
 </html>
