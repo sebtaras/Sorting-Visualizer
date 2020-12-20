@@ -29,6 +29,6 @@ childrenSize.forEach(child => {
 const logo = document.querySelector(".logo");
 logo.addEventListener("click", () => refresh());
 
-const themeButton = document.querySelector(".theme");
+const themeButton = document.querySelector(".theme-button");
 themeButton.dataset.currentTheme = "day";
 themeButton.addEventListener("click", () => toggleTheme(themeButton));

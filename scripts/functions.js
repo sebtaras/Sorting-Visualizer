@@ -2,12 +2,15 @@ function displayArray(array, speed) {
   const arrayDisplay = document.querySelector(".array-display");
   arrayDisplay.dataset.array = JSON.stringify(array);
   arrayDisplay.innerHTML = "";
-
+  const theme = document.querySelector(".theme-button").dataset.currentTheme;
   for (let i = 0; i < array.length; i++) {
     let container = document.createElement("div");
     container.classList.add("container");
     let element = document.createElement("div");
     element.classList.add("element");
+    if (theme == "night") {
+      element.classList.add("element-nightmode");
+    }
 
     if (array.length < 50) {
       element.innerHTML = array[i];
@@ -64,10 +67,28 @@ function refresh() {
 }
 
 function toggleTheme(button) {
-  if (button.dataset.value == "day") {
-    button.data.value == "night";
+  if (button.dataset.currentTheme == "day") {
+    button.dataset.currentTheme = "night";
+    try {
+      const elements = document.querySelectorAll(".element");
+      const arrayDisplay = document.querySelector(".array-display");
+      arrayDisplay.classList.add("array-display-nightmode");
+      elements.forEach(element => {
+        element.classList.add("element-nightmode");
+      });
+    } catch {}
+
     //set night theme
   } else {
+    button.dataset.currentTheme = "day";
+    try {
+      const elements = document.querySelectorAll(".element");
+      const arrayDisplay = document.querySelector(".array-display");
+      arrayDisplay.classList.remove("array-display-nightmode");
+      elements.forEach(element => {
+        element.classList.remove("element-nightmode");
+      });
+    } catch {}
     //set day theme
   }
 }

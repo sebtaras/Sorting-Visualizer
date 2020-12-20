@@ -130,8 +130,8 @@ nav ul {
   display: flex;
 }
 
-.selected-element {
-  background: black;
+.element-nightmode {
+  border-bottom: thin solid var(--bg-night-mode);
 }
 
 .array-display {
@@ -139,7 +139,11 @@ nav ul {
   background: var(--bg-day-mode);
 }
 
-.theme {
+.array-display-nightmode {
+  background: var(--bg-night-mode);
+}
+
+.theme-button {
   background: var(--bg-day-mode);
   color: var(--bg-night-mode);
   padding: 0.5rem 0.9rem;
