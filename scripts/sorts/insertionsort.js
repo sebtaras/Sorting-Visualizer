@@ -1,7 +1,4 @@
 async function insertionsort(array, timeout) {
-  const larger = "#96f274";
-  const smaller = "#f2294b";
-  const selected = "#f2f074";
   enableStopButton();
   for (let i = 0; i < array.length - 1; i++) {
     j = i + 1;

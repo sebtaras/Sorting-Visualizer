@@ -21,24 +21,37 @@ function displayArray(array, speed) {
 
     const { red, green, blue } = calculateColor(array[i], array.length);
     element.style.background = `rgb(${red},${green},${blue})`;
-    element.style.background = `teal`;
+    // element.style.background = `teal`;
     arrayDisplay.appendChild(container);
   }
   if (document.querySelector(".sort-button").dataset.enabled != "true") enableSortButton();
 }
 
 function calculateColor(value, length) {
-  let t = value / length;
-  while (t > 1) {
-    t = t / 10;
-  }
+  let t = value / 100;
   const koef = 255;
-  // const red = Math.floor(koef * Math.pow(t, 2));
-  // const green = Math.floor(koef * 2 * (1 - t));
-  // const blue = Math.floor(koef * Math.pow(1 - t, 2));
-  const green = Math.floor(koef * t);
-  const red = Math.floor(koef * (1 - t));
-  const blue = 0;
+
+  let red;
+  let green;
+  let blue;
+
+  // if (length < 20) {
+  //   red = 0;
+  //   green = 0;
+  //   blue = t * koef;
+  // } else if (length >= 20 && length < 100) {
+  //   red = koef - Math.floor(koef * (1 - t)) - 30;
+  //   blue = Math.floor(koef * t) + 50;
+  //   green = koef - Math.floor(koef * (1 - t)) - 30;
+  // } else {
+  //   blue = Math.floor(koef * Math.pow(t, 2));
+  //   red = Math.floor(koef * 2 * (1 - t));
+  //   green = Math.floor(koef * Math.pow(1 - t, 2));
+  // }
+  red = koef - Math.floor(koef * (1 - t)) - 30;
+  blue = Math.floor(koef * t) + 50;
+  green = koef - Math.floor(koef * (1 - t)) - 30;
+  console.log(red, green, blue);
   return { red, green, blue };
 }
 

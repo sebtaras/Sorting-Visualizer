@@ -1,7 +1,4 @@
 async function bubblesort(array, timeout) {
-  const larger = "#96f274";
-  const smaller = "#f2294b";
-  const selected = "#f2f074";
   const arrayDisplay = document.querySelector(".array-display");
   enableStopButton();
   for (let i = 0; i < array.length - 1; i++) {
@@ -48,6 +45,7 @@ async function bubblesort(array, timeout) {
       break;
     }
   }
+  displayArray(array);
   disableStopButton();
 }
 
