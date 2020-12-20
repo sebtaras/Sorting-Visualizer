@@ -42,6 +42,10 @@ function calculateColor(value, length) {
   return { red, green, blue };
 }
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function enableStopButton() {}
 
 function disableStopButton() {}
