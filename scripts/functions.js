@@ -69,6 +69,19 @@ function refresh() {
 function toggleTheme(button) {
   if (button.dataset.currentTheme == "day") {
     button.dataset.currentTheme = "night";
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.add("navbar-nightmode");
+
+    const navtags = document.querySelectorAll(".nav-tag");
+    navtags.forEach(navtag => {
+      navtag.classList.add("nav-tag-nightmode");
+    });
+
+    const dropdowns = document.querySelectorAll(".dropdown-content");
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.add("dropdown-content-nightmode");
+    });
+
     try {
       const elements = document.querySelectorAll(".element");
       const arrayDisplay = document.querySelector(".array-display");
@@ -77,10 +90,21 @@ function toggleTheme(button) {
         element.classList.add("element-nightmode");
       });
     } catch {}
-
-    //set night theme
   } else {
     button.dataset.currentTheme = "day";
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.remove("navbar-nightmode");
+
+    const navtags = document.querySelectorAll(".nav-tag");
+    navtags.forEach(navtag => {
+      navtag.classList.remove("nav-tag-nightmode");
+    });
+
+    const dropdowns = document.querySelectorAll(".dropdown-content");
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove("dropdown-content-nightmode");
+    });
+
     try {
       const elements = document.querySelectorAll(".element");
       const arrayDisplay = document.querySelector(".array-display");
@@ -89,7 +113,6 @@ function toggleTheme(button) {
         element.classList.remove("element-nightmode");
       });
     } catch {}
-    //set day theme
   }
 }
 

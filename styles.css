@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 :root {
-  --bg-night-mode: rgb(1, 6, 17);
-  --bg-day-mode: rgb(255, 255, 255);
+  --primary-black: rgb(1, 6, 17);
+  --primary-white: rgb(255, 255, 255);
+  --day-mode-hover: rgb(59, 59, 59);
+  --day-mode-dropdown: rgb(52, 11, 56);
+  --night-mode-hover: rgb(142, 31, 146);
+  --night-mode-navbar: rgb(40, 7, 43);
 }
 
 * {
@@ -27,13 +31,18 @@ main {
   flex: 0 1 auto;
 }
 
-nav {
+.navbar {
   height: 3rem;
-  background: black;
-  color: white;
+  background: var(--primary-black);
+  color: var(--primary-white);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.navbar-nightmode {
+  background: var(--night-mode-navbar);
+  color: var(--primary-white);
 }
 
 .logo {
@@ -50,9 +59,24 @@ nav span {
   font-weight: 600;
 }
 
-nav a,
-div {
-  color: white;
+.nav-tag {
+  color: var(--primary-white);
+  display: none;
+  padding: 0.7rem 1rem;
+  border-top: 1px solid rgb(48, 48, 48);
+}
+
+.nav-tag:hover {
+  background: var(--night-mode-hover);
+}
+
+.nav-tag-nightmode {
+  color: var(--primary-white);
+  border-top: 1px solid var(--primary-white);
+}
+
+.nav-tag-nightmode:hover {
+  background: var(--night-mode-hover);
 }
 
 nav ul {
@@ -71,26 +95,20 @@ nav ul {
 }
 
 .dropdown:hover {
-  background: grey;
+  background: var(--night-mode-hover);
 }
 
 .dropdown-content {
   position: absolute;
-  background: black;
+  background: var(--primary-black);
   top: 3rem;
   left: 0;
   min-width: 100%;
   max-width: 300px;
 }
 
-.dropdown-content a {
-  display: none;
-  padding: 0.7rem 1rem;
-  border-top: 1px solid rgb(48, 48, 48);
-}
-
-.dropdown-content a:hover {
-  background: grey;
+.dropdown-content-nightmode {
+  background: var(--day-mode-dropdown);
 }
 
 .dropdown:hover > .dropdown-content a {
@@ -115,15 +133,15 @@ nav ul {
 }
 
 .navbar-button:hover {
-  background: grey;
+  background: var(--night-mode-hover);
 }
 
 .nav-selected {
-  background: rgb(116, 11, 11);
+  background: rgb(28, 180, 185);
 }
 
 .element {
-  border-bottom: thin solid var(--bg-day-mode);
+  border-bottom: thin solid var(--primary-white);
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
@@ -131,26 +149,30 @@ nav ul {
 }
 
 .element-nightmode {
-  border-bottom: thin solid var(--bg-night-mode);
+  border-bottom: thin solid var(--primary-black);
 }
 
 .array-display {
   flex: 1 1 auto;
-  background: var(--bg-day-mode);
+  background: var(--primary-white);
 }
 
 .array-display-nightmode {
-  background: var(--bg-night-mode);
+  background: var(--primary-black);
 }
 
 .theme-button {
-  background: var(--bg-day-mode);
-  color: var(--bg-night-mode);
+  background: var(--primary-white);
+  color: var(--primary-black);
   padding: 0.5rem 0.9rem;
   margin-left: 1rem;
   border-radius: 0.3rem;
   font-weight: 1000;
   cursor: pointer;
+}
+
+.theme-button-nightmode {
+  background: var();
 }
 
 footer {
