@@ -28,7 +28,7 @@ function displayArray(array, speed) {
 }
 
 function calculateColor(value, length) {
-  let t = value / 100;
+  let t = 1 - value / 100;
   const koef = 255;
 
   let red;
@@ -57,6 +57,19 @@ function calculateColor(value, length) {
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function refresh() {
+  location.reload();
+}
+
+function toggleTheme(button) {
+  if (button.dataset.value == "day") {
+    button.data.value == "night";
+    //set night theme
+  } else {
+    //set day theme
+  }
 }
 
 function enableStopButton() {}

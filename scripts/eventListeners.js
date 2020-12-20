@@ -61,6 +61,9 @@ function sortListener() {
   }
   console.log(algorithm);
   switch (algorithm) {
+    case "Selection-sort":
+      selectionsort(getArray(), timeout);
+      break;
     case "Bubble-sort":
       bubblesort(getArray(), timeout);
       break;

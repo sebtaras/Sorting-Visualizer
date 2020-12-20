@@ -25,3 +25,10 @@ childrenSize.forEach(child => {
     child.addEventListener("click", () => setSettings(child, selectorSize, childrenSize));
   }
 });
+
+const logo = document.querySelector(".logo");
+logo.addEventListener("click", () => refresh());
+
+const themeButton = document.querySelector(".theme");
+themeButton.dataset.currentTheme = "day";
+themeButton.addEventListener("click", () => toggleTheme(themeButton));
