@@ -59,11 +59,20 @@ function calculateColor(value, length) {
 }
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function refresh() {
   location.reload();
+}
+
+function toggleMenu(button) {
+  //open close menu
+  if (button.dataset.opened == "false") {
+    button.dataset.opened = "open";
+  } else {
+    button.dataset.opened = "false";
+  }
 }
 
 function toggleTheme(button) {
@@ -73,12 +82,12 @@ function toggleTheme(button) {
     navbar.classList.add("navbar-nightmode");
 
     const navtags = document.querySelectorAll(".nav-tag");
-    navtags.forEach(navtag => {
+    navtags.forEach((navtag) => {
       navtag.classList.add("nav-tag-nightmode");
     });
 
     const dropdowns = document.querySelectorAll(".dropdown-content");
-    dropdowns.forEach(dropdown => {
+    dropdowns.forEach((dropdown) => {
       dropdown.classList.add("dropdown-content-nightmode");
     });
 
@@ -86,7 +95,7 @@ function toggleTheme(button) {
       const elements = document.querySelectorAll(".element");
       const arrayDisplay = document.querySelector(".array-display");
       arrayDisplay.classList.add("array-display-nightmode");
-      elements.forEach(element => {
+      elements.forEach((element) => {
         element.classList.add("element-nightmode");
       });
     } catch {}
@@ -96,12 +105,12 @@ function toggleTheme(button) {
     navbar.classList.remove("navbar-nightmode");
 
     const navtags = document.querySelectorAll(".nav-tag");
-    navtags.forEach(navtag => {
+    navtags.forEach((navtag) => {
       navtag.classList.remove("nav-tag-nightmode");
     });
 
     const dropdowns = document.querySelectorAll(".dropdown-content");
-    dropdowns.forEach(dropdown => {
+    dropdowns.forEach((dropdown) => {
       dropdown.classList.remove("dropdown-content-nightmode");
     });
 
@@ -109,7 +118,7 @@ function toggleTheme(button) {
       const elements = document.querySelectorAll(".element");
       const arrayDisplay = document.querySelector(".array-display");
       arrayDisplay.classList.remove("array-display-nightmode");
-      elements.forEach(element => {
+      elements.forEach((element) => {
         element.classList.remove("element-nightmode");
       });
     } catch {}
