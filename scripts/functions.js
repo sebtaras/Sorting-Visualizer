@@ -67,7 +67,6 @@ function refresh() {
 }
 
 function toggleMenu(button) {
-  //open close menu
   if (button.dataset.opened == "false") {
     button.dataset.opened = "open";
     const dropdowns = document.querySelector(".dropdowns");

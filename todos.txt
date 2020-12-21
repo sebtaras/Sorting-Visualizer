@@ -1,0 +1,3 @@
+responsive navbar
+stop sorting
+user input array
