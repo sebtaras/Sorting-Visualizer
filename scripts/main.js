@@ -4,7 +4,7 @@ const selected = "#e3d35d";
 
 const selectorAlgorithm = document.querySelector(".selector-algorithm");
 const childrenAlgorithm = selectorAlgorithm.childNodes;
-childrenAlgorithm.forEach((child) => {
+childrenAlgorithm.forEach(child => {
   if (child.innerHTML != undefined) {
     child.addEventListener("click", () => setSettings(child, selectorAlgorithm, childrenAlgorithm));
   }
@@ -12,7 +12,7 @@ childrenAlgorithm.forEach((child) => {
 
 const selectorSpeed = document.querySelector(".selector-speed");
 const childrenSpeed = selectorSpeed.childNodes;
-childrenSpeed.forEach((child) => {
+childrenSpeed.forEach(child => {
   if (child.innerHTML != undefined) {
     child.addEventListener("click", () => setSettings(child, selectorSpeed, childrenSpeed));
   }
@@ -20,7 +20,7 @@ childrenSpeed.forEach((child) => {
 
 const selectorSize = document.querySelector(".selector-size");
 const childrenSize = selectorSize.childNodes;
-childrenSize.forEach((child) => {
+childrenSize.forEach(child => {
   if (child.innerHTML != undefined) {
     child.addEventListener("click", () => setSettings(child, selectorSize, childrenSize));
   }

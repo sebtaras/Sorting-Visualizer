@@ -59,7 +59,7 @@ function calculateColor(value, length) {
 }
 
 function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function refresh() {
@@ -70,8 +70,12 @@ function toggleMenu(button) {
   //open close menu
   if (button.dataset.opened == "false") {
     button.dataset.opened = "open";
+    const dropdowns = document.querySelector(".dropdowns");
+    dropdowns.classList.add("dropdowns-remove");
   } else {
     button.dataset.opened = "false";
+    const dropdowns = document.querySelector(".dropdowns");
+    dropdowns.classList.remove("dropdowns-remove");
   }
 }
 
@@ -82,20 +86,28 @@ function toggleTheme(button) {
     navbar.classList.add("navbar-nightmode");
 
     const navtags = document.querySelectorAll(".nav-tag");
-    navtags.forEach((navtag) => {
+    navtags.forEach(navtag => {
       navtag.classList.add("nav-tag-nightmode");
     });
 
-    const dropdowns = document.querySelectorAll(".dropdown-content");
-    dropdowns.forEach((dropdown) => {
-      dropdown.classList.add("dropdown-content-nightmode");
+    const dropdowns = document.querySelector(".dropdowns");
+    dropdowns.classList.add("dropdowns-nightmode");
+
+    const dropdown = document.querySelectorAll(".dropdown");
+    dropdown.forEach(dropdown => {
+      dropdown.classList.add("dropdown-nightmode");
+    });
+
+    const dropdownContents = document.querySelectorAll(".dropdown-content");
+    dropdownContents.forEach(content => {
+      content.classList.add("dropdown-content-nightmode");
     });
 
     try {
       const elements = document.querySelectorAll(".element");
       const arrayDisplay = document.querySelector(".array-display");
       arrayDisplay.classList.add("array-display-nightmode");
-      elements.forEach((element) => {
+      elements.forEach(element => {
         element.classList.add("element-nightmode");
       });
     } catch {}
@@ -105,20 +117,28 @@ function toggleTheme(button) {
     navbar.classList.remove("navbar-nightmode");
 
     const navtags = document.querySelectorAll(".nav-tag");
-    navtags.forEach((navtag) => {
+    navtags.forEach(navtag => {
       navtag.classList.remove("nav-tag-nightmode");
     });
 
-    const dropdowns = document.querySelectorAll(".dropdown-content");
-    dropdowns.forEach((dropdown) => {
-      dropdown.classList.remove("dropdown-content-nightmode");
+    const dropdowns = document.querySelector(".dropdowns");
+    dropdowns.classList.remove("dropdowns-nightmode");
+
+    const dropdown = document.querySelectorAll(".dropdown");
+    dropdown.forEach(dropdown => {
+      dropdown.classList.remove("dropdown-nightmode");
+    });
+
+    const dropdownContents = document.querySelectorAll(".dropdown-content");
+    dropdownContents.forEach(content => {
+      content.classList.remove("dropdown-content-nightmode");
     });
 
     try {
       const elements = document.querySelectorAll(".element");
       const arrayDisplay = document.querySelector(".array-display");
       arrayDisplay.classList.remove("array-display-nightmode");
-      elements.forEach((element) => {
+      elements.forEach(element => {
         element.classList.remove("element-nightmode");
       });
     } catch {}
