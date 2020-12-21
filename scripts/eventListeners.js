@@ -40,6 +40,10 @@ function enableSortButton() {
 }
 
 function sortListener() {
+  const menuButton = document.querySelector(".menu-button");
+  menuButton.dataset.opened = "true";
+  const dropdowns = document.querySelector(".dropdowns");
+  dropdowns.classList.add("dropdowns-remove");
   const { algorithm, speed } = getSettings();
   let timeout;
   switch (speed) {

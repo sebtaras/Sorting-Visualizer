@@ -51,6 +51,7 @@ function calculateColor(value, length) {
   //   red = Math.floor(koef * 2 * (1 - t));
   //   green = Math.floor(koef * Math.pow(1 - t, 2));
   // }
+
   red = koef - Math.floor(koef * (1 - t)) - 30;
   blue = Math.floor(koef * t) + 50;
   green = koef - Math.floor(koef * (1 - t)) - 30;
@@ -68,7 +69,7 @@ function refresh() {
 
 function toggleMenu(button) {
   if (button.dataset.opened == "false") {
-    button.dataset.opened = "open";
+    button.dataset.opened = "true";
     const dropdowns = document.querySelector(".dropdowns");
     dropdowns.classList.add("dropdowns-remove");
   } else {
