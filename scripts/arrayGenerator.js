@@ -5,14 +5,15 @@ function generateArray() {
   let array = [];
   //let insertMax = Math.floor(Math.random() * count);
   for (let i = 0; i < count; i++) {
-    // if (i == insertMax) {
-    //   array[i] = 100;
-    // }
     let value = Math.random();
     while (value < 0.01) {
       value = Math.random();
     }
-    array[i] = Math.floor(value * 1000) / 10;
+    let val = Math.floor(value * 1000) / 10;
+    if (val < 3) {
+      val = val + 3;
+    }
+    array[i] = val;
   }
   // displayArray(
   //   array.sort((a, b) => {

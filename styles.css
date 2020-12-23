@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 :root {
-  --primary-black: rgb(1, 6, 17);
+  --primary-dark: rgb(0, 1, 41);
   --primary-white: rgb(255, 255, 255);
   --day-mode-hover: rgb(59, 59, 59);
   --day-mode-dropdown: rgb(52, 11, 56);
-  --night-mode-hover: rgb(142, 31, 146);
+  --primary-hover: rgb(142, 31, 146);
   --night-mode-navbar: rgb(40, 7, 43);
 }
 
@@ -33,7 +33,7 @@ main {
 
 .navbar {
   height: 3rem;
-  background: var(--primary-black);
+  background: var(--primary-dark);
   color: var(--primary-white);
   display: flex;
   justify-content: space-between;
@@ -67,7 +67,7 @@ nav span {
 }
 
 .nav-tag:hover {
-  background: var(--night-mode-hover);
+  background: var(--primary-hover);
 }
 
 .nav-tag-nightmode {
@@ -76,7 +76,7 @@ nav span {
 }
 
 .nav-tag-nightmode:hover {
-  background: var(--night-mode-hover);
+  background: var(--primary-hover);
 }
 
 nav ul {
@@ -88,7 +88,7 @@ nav ul {
 }
 
 .dropdowns {
-  background: var(--primary-black);
+  background: var(--primary-dark);
   color: var(--primary-white);
 }
 
@@ -102,7 +102,7 @@ nav ul {
   position: relative;
   font-size: 1rem;
   cursor: pointer;
-  background: var(--primary-black);
+  background: var(--primary-dark);
   color: var(--primary-white);
 }
 
@@ -112,12 +112,12 @@ nav ul {
 }
 
 .dropdown:hover {
-  background: var(--night-mode-hover);
+  background: var(--primary-hover);
 }
 
 .dropdown-content {
   position: absolute;
-  background: var(--primary-black);
+  background: var(--primary-dark);
   top: 3rem;
   left: 0;
   min-width: 100%;
@@ -150,7 +150,7 @@ nav ul {
 }
 
 .navbar-button:hover {
-  background: var(--night-mode-hover);
+  background: var(--primary-hover);
 }
 
 .nav-selected {
@@ -159,6 +159,7 @@ nav ul {
 
 .element {
   border-bottom: thin solid var(--primary-white);
+  border-top: thin solid var(--primary-white);
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
@@ -166,7 +167,8 @@ nav ul {
 }
 
 .element-nightmode {
-  border-bottom: thin solid var(--primary-black);
+  border-bottom: thin solid var(--primary-dark);
+  border-top: thin solid var(--primary-dark);
 }
 
 .array-display {
@@ -175,12 +177,12 @@ nav ul {
 }
 
 .array-display-nightmode {
-  background: var(--primary-black);
+  background: var(--primary-dark);
 }
 
 .theme-button {
   background: var(--primary-white);
-  color: var(--primary-black);
+  color: var(--primary-dark);
   padding: 0.5rem 0.9rem;
   margin-left: 1rem;
   border-radius: 0.3rem;
@@ -194,8 +196,41 @@ nav ul {
 }
 
 footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   height: 3rem;
-  background: rgb(21, 1, 43);
+  background: var(--primary-dark);
+  color: var(--primary-white);
+}
+
+.footer-nightmode {
+  background: var(--night-mode-navbar);
+  background: var(--night-mode-navbar);
+}
+
+.learn-button {
+  padding: 0.9rem 2rem;
+}
+
+.learn-button:hover {
+  background: var(--primary-hover);
+}
+
+.learn-section {
+  display: none;
+  align-items: center;
+  padding: 1rem;
+  position: absolute;
+  bottom: 3rem;
+  height: 60px;
+  width: 350px;
+  background: var(--primary-hover);
+  border-bottom: 1px solid var(--day-mode-hover);
+}
+
+.learn-button:hover + .learn-section {
+  display: flex;
 }
 
 @media screen and (max-width: 1150px) {
@@ -248,7 +283,7 @@ footer {
     left: 0.1rem;
     top: 0.5rem;
     background: var(--primary-white);
-    color: var(--primary-black);
+    color: var(--primary-dark);
     padding: 0.4rem 0.6rem;
     margin-left: 0.4rem;
     border-radius: 0.3rem;
@@ -262,7 +297,7 @@ footer {
     right: 0.5rem;
     top: 0.5rem;
     background: var(--primary-white);
-    color: var(--primary-black);
+    color: var(--primary-dark);
     padding: 0.4rem 0.8rem;
     margin-left: 0.4rem;
     border-radius: 0.3rem;
@@ -272,7 +307,7 @@ footer {
 
   .dropdown-content {
     position: absolute;
-    background: var(--primary-black);
+    background: var(--primary-dark);
     top: 0rem;
     left: 200px;
     min-width: 100%;
@@ -280,7 +315,7 @@ footer {
   }
 
   .dropdown:hover {
-    background: var(--night-mode-hover);
+    background: var(--primary-hover);
   }
 
   .dropdown-content-nightmode {

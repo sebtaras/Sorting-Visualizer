@@ -36,3 +36,6 @@ themeButton.addEventListener("click", () => toggleTheme(themeButton));
 const menuButton = document.querySelector(".menu-button");
 menuButton.dataset.opened = "false";
 menuButton.addEventListener("click", () => toggleMenu(menuButton));
+
+const learnButton = document.querySelector(".learn-button");
+learnButton.addEventListener("click", () => toggleLearn(learnButton));

@@ -14,6 +14,10 @@ function displayArray(array, speed) {
 
     if (array.length < 50) {
       element.innerHTML = array[i];
+      if (array[i] >= 50) {
+        element.style.color = "white";
+      }
+      element.style.fontWeight = "bold";
     }
 
     container.style.width = `${array[i]}%`;
@@ -79,6 +83,10 @@ function toggleMenu(button) {
   }
 }
 
+function toggleLearn(button) {
+  const { algorithm } = getSettings();
+}
+
 function toggleTheme(button) {
   if (button.dataset.currentTheme == "day") {
     button.dataset.currentTheme = "night";
@@ -103,6 +111,9 @@ function toggleTheme(button) {
       content.classList.add("dropdown-content-nightmode");
     });
 
+    const footer = document.querySelector("footer");
+    footer.classList.add("footer-nightmode");
+
     try {
       const elements = document.querySelectorAll(".element");
       const arrayDisplay = document.querySelector(".array-display");
@@ -110,7 +121,9 @@ function toggleTheme(button) {
       elements.forEach(element => {
         element.classList.add("element-nightmode");
       });
-    } catch {}
+    } catch {
+      alert();
+    }
   } else {
     button.dataset.currentTheme = "day";
     const navbar = document.querySelector(".navbar");
@@ -133,6 +146,9 @@ function toggleTheme(button) {
     dropdownContents.forEach(content => {
       content.classList.remove("dropdown-content-nightmode");
     });
+
+    const footer = document.querySelector("footer");
+    footer.classList.remove("footer-nightmode");
 
     try {
       const elements = document.querySelectorAll(".element");
