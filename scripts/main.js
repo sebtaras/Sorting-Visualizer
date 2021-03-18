@@ -36,3 +36,8 @@ themeButton.addEventListener("click", () => toggleTheme(themeButton));
 const menuButton = document.querySelector(".menu-button");
 menuButton.dataset.opened = "false";
 menuButton.addEventListener("click", () => toggleMenu(menuButton));
+
+// Check local storage if night mode was turned on
+if (localStorage.getItem("flag") !== null) {
+  toggleTheme(themeButton);
+}
