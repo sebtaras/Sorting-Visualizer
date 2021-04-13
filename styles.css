@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 :root {
-	--primary-dark: rgb(0, 1, 41);
+	--primary-dark: rgb(16, 13, 19);
 	--primary-white: rgb(255, 255, 255);
 	--day-mode-hover: rgb(59, 59, 59);
 	--day-mode-dropdown: rgb(52, 11, 56);
@@ -223,7 +223,7 @@ footer {
 	padding: 1rem;
 	position: absolute;
 	bottom: 3rem;
-	height: 180px;
+	height: 210px;
 	width: 350px;
 	background: var(--primary-hover);
 	border-bottom: 1px solid var(--day-mode-hover);

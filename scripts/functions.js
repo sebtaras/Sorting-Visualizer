@@ -177,7 +177,7 @@ function updateLearn(algorithm) {
 			break;
 		case "Insertion-sort":
 			algorithmInfo =
-				"Insertion sort compares neighboring elements and swaps them if they're out of order. If the swap occurs the smaller element is compared to previous elements, in order, one by one until it finds an element that's smaller than it. The algorithm then continues where it left off.";
+				"Insertion sort compares neighboring elements and swaps them if they're out of order. If the swap occurs the smaller element is compared to previous elements, in order, one by one until it finds an element that's smaller than it. The algorithm then continues where it left. \nAs a result the first half of the array is always sorted and the new elements are just \"inserted\" into their place.";
 			break;
 	}
 	const learnSection = document.querySelector(".learn-section");
