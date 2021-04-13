@@ -88,6 +88,7 @@ function toggleLearn(button) {
 
 function toggleTheme(button) {
 	if (button.dataset.currentTheme == "day") {
+		localStorage.setItem("theme", "day");
 		button.dataset.currentTheme = "night";
 		const navbar = document.querySelector(".navbar");
 		navbar.classList.add("navbar-nightmode");
@@ -124,6 +125,7 @@ function toggleTheme(button) {
 			alert();
 		}
 	} else {
+		localStorage.setItem("theme", "night");
 		button.dataset.currentTheme = "day";
 		const navbar = document.querySelector(".navbar");
 		navbar.classList.remove("navbar-nightmode");
